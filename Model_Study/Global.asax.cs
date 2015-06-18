@@ -8,8 +8,8 @@ namespace Model_Study
     {
         protected void Application_Start()
         {
+            System.Data.Entity.Database.SetInitializer(new System.Data.Entity.DropCreateDatabaseIfModelChanges<Models.MusicStoreDBContext>());
             System.Data.Entity.Database.SetInitializer(new Models.MusicStoreDBInitializer());
-            System.Data.Entity.Database.SetInitializer(new System.Data.Entity.DropCreateDatabaseAlways<Models.MusicStoreDBContext>());
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
